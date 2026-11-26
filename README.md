@@ -1,5 +1,10 @@
 # 🐱 Baje de Pepa - Videojuego Desplegable en GitHub y Ejecutable de Escritorio
 
+## Modo Serpientes contra Gusanos
+
+Abre **Serpientes** desde la cabecera o entra directamente en `snake.html`. Esta recreación local toma como referencia las mecánicas de [Snake vs Worms de CrioDev en Poki](https://poki.com/es/g/snake-vs-worms): recoger comida, crecer, evitar los cuerpos rivales y acelerar consumiendo longitud. Incluye rivales controlados por el juego, clasificación, récord local y controles de ratón, teclado y pantalla táctil. Funciona sin conexión y no incluye multijugador, tienda ni recursos gráficos del juego original.
+
+Para verificar la serie de puzzles del gato, ejecuta `npm run verify:levels`. El script comprueba los 70 niveles, sus soluciones mínimas y que todas las casillas jugables queden cubiertas.
 
 
 ---
@@ -61,7 +66,7 @@ npm run dist
 
 ## 🎮 Características de Baje de Pepa
 
-- **50 Niveles Progresivos Verificados**: Organizados en 5 mundos temáticos con curvas de dificultad creciente. Cada nivel fue resuelto y verificado algorítmicamente (BFS).
+- **70 Niveles Progresivos Verificados**: Organizados en 7 mundos temáticos con curvas de dificultad creciente. Los mundos 6 y 7 añaden 20 puzzles de 7×6 y 7×7 casillas. Cada nivel fue resuelto y verificado algorítmicamente (BFS).
 - **Motor Gráfico Voxel 2.5D**: Renderizado a 60 FPS en Canvas HTML5 con perspectiva isométrica suave, sombreado de relieve, ojos parpadeantes que siguen el movimiento, expresiones faciales y partículas de confeti.
 - **Sintetizador Procedural de Audio (Web Audio API)**: Sonidos generados por código en tiempo real (escala pentatónica ascendente al estirarse, maullidos tiernos con formantes vocales, rebotes suaves y fanfarria triunfal).
 - **Creador de Niveles Integrado (Level Editor)**: Diseña tus propios tableros colocando obstáculos y la posición inicial. La IA valida si tiene solución matemática y te permite jugarlo al instante.
@@ -85,7 +90,7 @@ npm run dist
 ├── css/
 │   └── styles.css          # Estilos modernos, diseño responsive y temas visuales
 ├── js/
-│   ├── levels.js           # Base de datos con los 50 niveles matemáticamente resueltos
+│   ├── levels.js           # Base de datos con los 70 niveles matemáticamente resueltos
 │   ├── audio.js            # Motor de sonido procedural en tiempo real (Web Audio API)
 │   ├── solver.js           # Algoritmo BFS para validación y pistas en tiempo real
 │   ├── renderer.js         # Motor gráfico Canvas 2D/2.5D con skins, expresiones y partículas

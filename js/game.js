@@ -629,6 +629,8 @@ class LongcatGame {
       { id: 3, name: 'Mundo 3: Los Tejados al Atardecer' },
       { id: 4, name: 'Mundo 4: El Templo Antiguo' },
       { id: 5, name: 'Mundo 5: El Espacio Estelar' },
+      { id: 6, name: 'Mundo 6: La Galaxia Enredada' },
+      { id: 7, name: 'Mundo 7: El Laberinto Infinito' },
     ];
 
     worlds.forEach(w => {

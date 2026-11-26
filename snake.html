@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10232b">
+  <title>Serpientes contra Gusanos · Baje de Pepa</title>
+  <link rel="stylesheet" href="css/snake.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="index.html">← Baje de Pepa</a>
+    <strong>🐍 Serpientes contra Gusanos</strong>
+    <button id="soundButton" type="button" aria-label="Silenciar sonido">🔊</button>
+  </header>
+  <main>
+    <section class="arena" aria-label="Arena de serpientes">
+      <canvas id="arenaCanvas" aria-label="Juego de serpientes contra gusanos"></canvas>
+      <div class="hud" aria-live="polite">
+        <span>Longitud <b id="lengthValue">0</b></span>
+        <span>Mejor <b id="bestValue">0</b></span>
+        <span>Posición <b id="rankValue">—</b></span>
+      </div>
+      <div class="leaderboard" aria-label="Clasificación"><strong>Clasificación</strong><ol id="leaderboardList"></ol></div>
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <span class="eyebrow">Modo arena · sin conexión</span>
+          <h1 id="overlayTitle">¡Crece y sobrevive!</h1>
+          <p id="overlayText">Come bocados, esquiva los cuerpos rivales y haz que choquen contigo. El impulso te ayuda a escapar o cerrarles el paso.</p>
+          <button type="button" id="playButton">Jugar</button>
+          <p class="instructions">Mueve el ratón o usa WASD/flechas · Clic, Espacio o Mayús para acelerar · En móvil, arrastra y mantén «Impulso»</p>
+        </div>
+      </div>
+      <button class="boost" id="boostButton" type="button" aria-label="Mantener para acelerar">⚡ Impulso</button>
+    </section>
+  </main>
+  <script src="js/snake.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// 50 Handcrafted and verified solvable levels for Longcat
+// 70 verified solvable levels for Longcat
 const LEVELS = [
   {
     "id": 1,
@@ -2054,6 +2054,896 @@ const LEVELS = [
     "name": "Nivel 50",
     "world": 5,
     "worldName": "El Espacio Estelar"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "start": [
+      5,
+      3
+    ],
+    "solution": [
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D",
+      "R",
+      "U",
+      "R",
+      "D",
+      "R",
+      "D",
+      "R"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 51,
+    "name": "Nivel 51",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "start": [
+      3,
+      1
+    ],
+    "solution": [
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "L",
+      "D",
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 52,
+    "name": "Nivel 52",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "start": [
+      5,
+      1
+    ],
+    "solution": [
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 53,
+    "name": "Nivel 53",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "start": [
+      6,
+      1
+    ],
+    "solution": [
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "R",
+      "D",
+      "R",
+      "D",
+      "L"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 54,
+    "name": "Nivel 54",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        6,
+        5
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "start": [
+      5,
+      3
+    ],
+    "solution": [
+      "L",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 55,
+    "name": "Nivel 55",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        6,
+        0
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "start": [
+      5,
+      2
+    ],
+    "solution": [
+      "L",
+      "U",
+      "R",
+      "D",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 56,
+    "name": "Nivel 56",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        6,
+        3
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "start": [
+      3,
+      1
+    ],
+    "solution": [
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "L"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 57,
+    "name": "Nivel 57",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "start": [
+      6,
+      4
+    ],
+    "solution": [
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U",
+      "L"
+    ],
+    "moves": 16,
+    "walkable": 40,
+    "id": 58,
+    "name": "Nivel 58",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        5,
+        1
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "start": [
+      1,
+      2
+    ],
+    "solution": [
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "D",
+      "R",
+      "D",
+      "L",
+      "U",
+      "L",
+      "D",
+      "L",
+      "D"
+    ],
+    "moves": 16,
+    "walkable": 39,
+    "id": 59,
+    "name": "Nivel 59",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 6,
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "start": [
+      5,
+      3
+    ],
+    "solution": [
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L"
+    ],
+    "moves": 16,
+    "walkable": 39,
+    "id": 60,
+    "name": "Nivel 60",
+    "world": 6,
+    "worldName": "La Galaxia Enredada"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "start": [
+      4,
+      2
+    ],
+    "solution": [
+      "L",
+      "U",
+      "L",
+      "D",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L"
+    ],
+    "moves": 17,
+    "walkable": 47,
+    "id": 61,
+    "name": "Nivel 61",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "start": [
+      2,
+      5
+    ],
+    "solution": [
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "R",
+      "D",
+      "R",
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "L",
+      "U"
+    ],
+    "moves": 17,
+    "walkable": 47,
+    "id": 62,
+    "name": "Nivel 62",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "start": [
+      0,
+      5
+    ],
+    "solution": [
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "D",
+      "L",
+      "U",
+      "L",
+      "U",
+      "R",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 63,
+    "name": "Nivel 63",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    "start": [
+      3,
+      4
+    ],
+    "solution": [
+      "R",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 64,
+    "name": "Nivel 64",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        3,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "start": [
+      1,
+      2
+    ],
+    "solution": [
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "U",
+      "L",
+      "U",
+      "L"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 65,
+    "name": "Nivel 65",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "start": [
+      4,
+      5
+    ],
+    "solution": [
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D",
+      "L",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "L",
+      "U",
+      "L"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 66,
+    "name": "Nivel 66",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    "start": [
+      3,
+      3
+    ],
+    "solution": [
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U",
+      "L",
+      "D",
+      "L",
+      "D"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 67,
+    "name": "Nivel 67",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "solution": [
+      "D",
+      "L",
+      "U",
+      "R",
+      "D",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "U",
+      "R",
+      "D",
+      "R",
+      "U",
+      "R",
+      "U"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 68,
+    "name": "Nivel 68",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "start": [
+      3,
+      4
+    ],
+    "solution": [
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "R",
+      "D",
+      "L",
+      "U",
+      "L",
+      "D",
+      "R",
+      "D",
+      "R",
+      "U",
+      "L"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 69,
+    "name": "Nivel 69",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
+  },
+  {
+    "w": 7,
+    "h": 7,
+    "walls": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "start": [
+      3,
+      2
+    ],
+    "solution": [
+      "U",
+      "L",
+      "D",
+      "R",
+      "U",
+      "L",
+      "D",
+      "R",
+      "D",
+      "L",
+      "U",
+      "R",
+      "U",
+      "L",
+      "U",
+      "L",
+      "U"
+    ],
+    "moves": 17,
+    "walkable": 46,
+    "id": 70,
+    "name": "Nivel 70",
+    "world": 7,
+    "worldName": "El Laberinto Infinito"
   }
 ];
 
