@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Baje de Pepa - El Juego de Puzzle del Gato Infinito</title>
+  <meta name="description" content="Baje de Pepa - Recreación completa y fiel del popular juego de puzzle Longcat de Martin Magni / Poki. ¡Desliza el gato, estira su cuerpo y llena cada casilla sin quedar atrapado!">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+</head>
+<body>
+
+  <!-- Encabezado de la Aplicación -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="brand-logo" aria-hidden="true">🐱</div>
+      <div class="brand-info">
+        <h1 class="brand-title">Baje de Pepa</h1>
+        <span class="world-badge" id="worldBadge">El Jardín Soleado</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button type="button" class="btn-icon" id="btnSound" aria-label="Alternar Sonido" title="Silenciar / Activar Sonido">🔊</button>
+      <button type="button" class="btn-icon" id="btnHelp" aria-label="Instrucciones" title="Cómo Jugar">❓</button>
+      <button type="button" class="btn-icon" id="btnSettings" aria-label="Personalización y Ajustes" title="Aspectos del Gato">🎨</button>
+      <button type="button" class="btn-icon" id="btnEditor" aria-label="Creador de Niveles" title="Crear Nivel">🛠️</button>
+      <button type="button" class="btn-icon" id="btnLevelSelect" aria-label="Seleccionar Nivel" title="Lista de Niveles">📑</button>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal del Juego -->
+  <main class="game-container">
+
+    <!-- Tarjeta de Información del Nivel -->
+    <div class="level-info-bar">
+      <div class="level-meta">
+        <h2 class="level-title" id="levelTitle">Nivel 1</h2>
+        <span class="move-tag">Movimientos: <span id="moveCounter">0</span></span>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-track" role="progressbar" id="progressBarTrack" aria-label="Progreso del tablero">
+          <div class="progress-fill" id="progressBar" style="width: 10%;"></div>
+        </div>
+        <span class="progress-label" id="progressLabel">1 / 9</span>
+      </div>
+    </div>
+
+    <!-- Área del Canvas y Notificación de Atasco -->
+    <div class="canvas-wrapper">
+      <div class="stuck-notice" id="stuckNotice" role="alert" aria-live="assertive">
+        ¡Estás atrapado! Pulsa Deshacer o Reiniciar
+      </div>
+      <canvas id="gameCanvas" width="480" height="480" aria-label="Tablero de juego de Baje de Pepa"></canvas>
+    </div>
+
+    <!-- Barra de Acciones de Control -->
+    <div class="controls-bar">
+      <button type="button" class="btn-action" id="btnUndo" aria-label="Deshacer Movimiento" title="Deshacer último movimiento (Z)">
+        <span>↩️</span> Deshacer
+      </button>
+      <button type="button" class="btn-action" id="btnRestart" aria-label="Reiniciar Nivel" title="Reiniciar nivel (R)">
+        <span>🔄</span> Reiniciar
+      </button>
+      <button type="button" class="btn-action btn-hint" id="btnHint" aria-label="Pedir Pista" title="Mostrar siguiente paso (H)">
+        <span>💡</span> Pista
+      </button>
+    </div>
+
+    <!-- D-Pad Virtual para Móviles y Pantallas Táctiles -->
+    <div class="mobile-dpad" aria-label="Controles direccionales táctiles">
+      <button type="button" class="dpad-btn dpad-up" id="dpadUp" aria-label="Mover Arriba">▲</button>
+      <button type="button" class="dpad-btn dpad-left" id="dpadLeft" aria-label="Mover Izquierda">◀</button>
+      <div class="dpad-btn dpad-center"></div>
+      <button type="button" class="dpad-btn dpad-right" id="dpadRight" aria-label="Mover Derecha">▶</button>
+      <button type="button" class="dpad-btn dpad-down" id="dpadDown" aria-label="Mover Abajo">▼</button>
+    </div>
+
+  </main>
+
+  <!-- Pie de Página con Atajos de Teclado -->
+  <footer class="app-footer">
+    <div class="keyboard-hints">
+      <span><kbd class="key-kbd">Flechas</kbd> o <kbd class="key-kbd">WASD</kbd> Deslizar</span>
+      <span><kbd class="key-kbd">Z</kbd> Deshacer</span>
+      <span><kbd class="key-kbd">R</kbd> Reiniciar</span>
+      <span><kbd class="key-kbd">H</kbd> Pista</span>
+    </div>
+  </footer>
+
+  <!-- ==============================================
+       MODALES DIALOG (Modern Web Guidance Compliant)
+       ============================================== -->
+
+  <!-- Modal 1: Selector de Niveles (50 Niveles) -->
+  <dialog id="levelSelectModal" closedby="any" aria-labelledby="levelSelectTitle">
+    <div class="modal-header">
+      <h2 class="modal-title" id="levelSelectTitle">Seleccionar Nivel</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-close" aria-label="Cerrar ventana">✕</button>
+      </form>
+    </div>
+    <div class="level-select-container" id="levelGrid">
+      <!-- Los niveles se generan dinámicamente -->
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Victoria / Nivel Completado -->
+  <dialog id="victoryModal" closedby="any" aria-labelledby="victoryTitle">
+    <div class="modal-header">
+      <h2 class="modal-title" id="victoryTitle">¡Nivel Completado!</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-close" aria-label="Cerrar ventana">✕</button>
+      </form>
+    </div>
+    <div class="victory-content">
+      <div class="victory-cat-icon">🎉🐱✨</div>
+      <div class="victory-stars-box" id="victoryStars">
+        <span class="star-icon active">★</span>
+        <span class="star-icon active">★</span>
+        <span class="star-icon active">★</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        ¡Has estirado al gato para cubrir el 100% del tablero!
+      </p>
+      <div class="victory-stats">
+        <div class="victory-stat-item">
+          <span>Tus movimientos:</span>
+          <strong id="victoryMoves">5</strong>
+        </div>
+        <div class="victory-stat-item">
+          <span>Movimientos óptimos:</span>
+          <strong id="victoryOptimal">5</strong>
+        </div>
+      </div>
+      <button type="button" class="btn-primary" id="btnVictoryNext" autofocus>
+        Siguiente Nivel ➔
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Modal 3: Personalización y Aspectos (Skins) -->
+  <dialog id="settingsModal" closedby="any" aria-labelledby="settingsTitle">
+    <div class="modal-header">
+      <h2 class="modal-title" id="settingsTitle">Aspecto del Gato</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-close" aria-label="Cerrar ventana">✕</button>
+      </form>
+    </div>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+      Elige la apariencia favorita de tu gatito:
+    </p>
+    <div class="skin-grid" id="skinSelectorList">
+      <!-- Generado dinámicamente con los skins disponibles -->
+    </div>
+  </dialog>
+
+  <!-- Modal 4: Instrucciones y Cómo Jugar -->
+  <dialog id="helpModal" closedby="any" aria-labelledby="helpTitle">
+    <div class="modal-header">
+      <h2 class="modal-title" id="helpTitle">Cómo Jugar a Baje de Pepa</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-close" aria-label="Cerrar ventana">✕</button>
+      </form>
+    </div>
+    <div class="help-content">
+      <div class="help-guide-step">
+        <div class="help-badge">1</div>
+        <div class="help-desc">
+          <h4>Desliza en cualquier dirección</h4>
+          <p>Usa las flechas, WASD o desliza con el dedo o ratón. El gato se deslizará en línea recta.</p>
+        </div>
+      </div>
+      <div class="help-guide-step">
+        <div class="help-badge">2</div>
+        <div class="help-desc">
+          <h4>El gato no se detiene a mitad de camino</h4>
+          <p>Una vez iniciado el deslizamiento, el gato sigue avanzando hasta chocar contra un muro, el borde o su propio cuerpo.</p>
+        </div>
+      </div>
+      <div class="help-guide-step">
+        <div class="help-badge">3</div>
+        <div class="help-desc">
+          <h4>Su cuerpo crece con cada paso</h4>
+          <p>Las casillas por las que pasa quedan ocupadas permanentemente por su cuerpo largo.</p>
+        </div>
+      </div>
+      <div class="help-guide-step">
+        <div class="help-badge">4</div>
+        <div class="help-desc">
+          <h4>Objetivo: Llena el 100% de las casillas</h4>
+          <p>Planifica tu recorrido para no bloquearte a ti mismo y cubrir cada rincón del tablero.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 5: Creador y Validador de Niveles Personalizados -->
+  <dialog id="editorModal" closedby="any" aria-labelledby="editorTitle">
+    <div class="modal-header">
+      <h2 class="modal-title" id="editorTitle">Creador de Niveles</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-close" aria-label="Cerrar ventana">✕</button>
+      </form>
+    </div>
+    <div class="editor-content">
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">
+        Haz clic en las casillas para colocar muros o definir la posición inicial. La IA verificará si tu puzzle tiene solución.
+      </p>
+      <div class="editor-controls">
+        <button type="button" class="editor-btn" id="editorModeWall">🧱 Colocar Muros</button>
+        <button type="button" class="editor-btn" id="editorModeStart">🐱 Posición Gato</button>
+      </div>
+      <div class="editor-canvas-box">
+        <canvas id="editorCanvas" width="300" height="300"></canvas>
+      </div>
+      <button type="button" class="btn-primary" id="editorTestBtn">
+        🔍 Probar y Validar Nivel con IA
+      </button>
+      <div id="editorResult" class="editor-result" style="display: none;"></div>
+    </div>
+  </dialog>
+
+  <!-- Scripts del Juego -->
+  <script src="js/levels.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/solver.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

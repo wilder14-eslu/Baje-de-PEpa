@@ -1,0 +1,23 @@
+{
+  "name": "baje-de-pepa",
+  "version": "1.0.0",
+  "description": "Baje de Pepa - El videojuego de puzzle del gato infinito",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-packager . \"Baje de Pepa\" --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "keywords": [
+    "baje-de-pepa",
+    "longcat",
+    "puzzle",
+    "game",
+    "fancade",
+    "poki"
+  ],
+  "author": "Antigravity & User",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
