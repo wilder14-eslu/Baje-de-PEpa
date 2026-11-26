@@ -1,6 +1,6 @@
 # 🐱 Baje de Pepa - Videojuego Desplegable en GitHub y Ejecutable de Escritorio
 
-Una recreación completa, moderna, interactiva y de alto rendimiento basada en la ingeniería inversa del popular videojuego de puzzle **Longcat** ([poki.com/es/g/longcat](http://poki.com/es/g/longcat) / Martin Magni - Fancade), titulada **Baje de Pepa**.
+
 
 ---
 
