@@ -1,0 +1,250 @@
+:root {
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:#f7f4ff;
+  background:#101432;
+  font-synthesis:none
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column
+}
+.topbar {
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px clamp(12px,3vw,30px);
+  background:#111636
+}
+.topbar a {
+  color:#bddcff;
+  text-decoration:none;
+  font-weight:750
+}
+.topbar a:hover {
+  text-decoration:underline
+}
+.topbar strong {
+  font-size:clamp(1rem,1.4vw + .6rem,1.35rem);
+  text-align:center
+}
+.topbar button {
+  border:1px solid #697ac7;
+  border-radius:10px;
+  background:#242e64;
+  color:#fff;
+  font-size:1.2rem;
+  padding:6px 10px;
+  cursor:pointer
+}
+main {
+  flex:1;
+  min-height:0;
+  padding:0 clamp(0px,2vw,24px) clamp(0px,2vw,24px);
+  display:flex
+}
+.game-shell {
+  position:relative;
+  flex:1;
+  min-height:540px;
+  overflow:hidden;
+  border:2px solid #5365bc;
+  border-radius:18px;
+  background:#111536;
+  box-shadow:0 20px 50px #07091e99;
+  content-visibility:auto;
+  contain-intrinsic-size:auto none auto 640px
+}
+canvas {
+  display:block;
+  width:100%;
+  height:100%;
+  touch-action:none
+}
+.hud {
+  position:absolute;
+  top:12px;
+  left:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  pointer-events:none
+}
+.hud span,.status {
+  background:#101735df;
+  border:1px solid #5968b9b0;
+  border-radius:10px;
+  padding:7px 11px;
+  font-size:.88rem
+}
+.hud b {
+  color:#ffe081
+}
+.status {
+  position:absolute;
+  top:52px;
+  left:12px;
+  margin:0;
+  max-width:calc(100% - 24px);
+  color:#e7e3ff;
+  pointer-events:none
+}
+.controls {
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  pointer-events:none
+}
+.controls button {
+  pointer-events:auto;
+  touch-action:none;
+  user-select:none;
+  border:1px solid #a6afff;
+  border-radius:12px;
+  background:#333e83dd;
+  color:#fff;
+  font-weight:900;
+  font-size:1rem;
+  min-width:48px;
+  min-height:44px;
+  cursor:pointer;
+  box-shadow:0 3px 8px #06082066
+}
+.controls button:active {
+  background:#5d6bc5
+}
+.dpad {
+  display:none;
+  grid-template-columns:repeat(3,48px);
+  grid-template-rows:repeat(2,46px);
+  gap:4px
+}
+.dpad [data-direction=up] {
+  grid-column:2
+}
+.dpad [data-direction=left] {
+  grid-column:1;
+  grid-row:2
+}
+.dpad [data-direction=down] {
+  grid-column:2;
+  grid-row:2
+}
+.dpad [data-direction=right] {
+  grid-column:3;
+  grid-row:2
+}
+.jump {
+  display:none;
+  padding:0 18px
+}
+.game-shell[data-mode=dash] .jump {
+  display:block
+}
+.game-shell[data-mode=dash] .dpad {
+  display:none
+}
+.overlay {
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  place-items:center;
+  background:#080d29d9;
+  padding:18px
+}
+.overlay[hidden] {
+  display:none
+}
+.panel {
+  width:min(100%,465px);
+  min-width:0;
+  text-align:center;
+  padding:clamp(22px,5vw,36px);
+  background:#1c2457;
+  border:1px solid #7786f1;
+  border-radius:22px;
+  box-shadow:0 18px 60px #0009
+}
+.eyebrow {
+  color:#ffe081;
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase
+}
+.panel h1 {
+  font-size:clamp(1.8rem,1rem + 4vw,2.8rem);
+  margin:8px 0
+}
+.panel p {
+  color:#e7e5ff;
+  line-height:1.5
+}
+.panel button {
+  border:0;
+  border-radius:12px;
+  background:#ffe081;
+  color:#1c2457;
+  font-size:1.1rem;
+  font-weight:900;
+  padding:12px 40px;
+  cursor:pointer
+}
+.panel button:hover {
+  background:#fff0ae
+}
+.panel .instructions {
+  font-size:.82rem;
+  margin-bottom:0
+}
+button:focus-visible,a:focus-visible {
+  outline:3px solid #fff;
+  outline-offset:3px
+}
+@media(max-width:700px) {
+  main {
+    padding:0
+  }
+  .game-shell {
+    border:0;
+    border-radius:0;
+    min-height:calc(100dvh - 58px)
+  }
+  .dpad {
+    display:grid
+  }
+  .hud {
+    gap:4px;
+    top:7px;
+    left:7px
+  }
+  .hud span {
+    font-size:.76rem;
+    padding:5px 7px
+  }
+  .status {
+    top:42px;
+    left:7px;
+    font-size:.75rem;
+    padding:5px 7px
+  }
+  .topbar a {
+    font-size:.8rem
+  }
+  .controls {
+    bottom:8px;
+    left:8px;
+    right:8px
+  }
+}

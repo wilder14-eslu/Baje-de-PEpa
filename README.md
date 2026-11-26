@@ -4,6 +4,10 @@
 
 Abre **Serpientes** desde la cabecera o entra directamente en `snake.html`. Esta recreación local toma como referencia las mecánicas de [Snake vs Worms de CrioDev en Poki](https://poki.com/es/g/snake-vs-worms): recoger comida, crecer, evitar los cuerpos rivales y acelerar consumiendo longitud. Incluye rivales controlados por el juego, clasificación, récord local y controles de ratón, teclado y pantalla táctil. Funciona sin conexión y no incluye multijugador, tienda ni recursos gráficos del juego original.
 
+## Pepa Maze Dash
+
+Abre `pacdash.html` desde **Maze Dash** en la cabecera. Explora un laberinto de varias rutas, recoge puntos, esquiva fantasmas y completa tres portales con tramos de salto y obstáculos. Usa flechas o WASD para moverte; en los tramos Dash, pulsa Espacio, ↑, W o el botón táctil para saltar. La experiencia funciona sin conexión y utiliza gráficos originales dibujados con Canvas.
+
 Para verificar la serie de puzzles del gato, ejecuta `npm run verify:levels`. El script comprueba los 70 niveles, sus soluciones mínimas y que todas las casillas jugables queden cubiertas.
 
 
